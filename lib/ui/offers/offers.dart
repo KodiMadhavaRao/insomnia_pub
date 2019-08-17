@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:insomnia_pub/net/http_nw.dart';
 import 'package:insomnia_pub/util/constants.dart';
 
 
@@ -14,6 +15,11 @@ class OffersState extends State<Offers> {
   @override
   Widget build(BuildContext context) {
     return getMainView();
+  }
+
+  @override
+  void initState() {
+    HttpRequest.getOffers();
   }
 
   Widget getMainView() {
